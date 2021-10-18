@@ -1,2 +1,2 @@
 # my-front 1
-최초 수정 !!
+Settings - > Secrets -> Actions secrets 수정 완료
