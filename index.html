@@ -49,7 +49,19 @@
     </style>
     <script>
         function save() {
-            alert("파일이 업로드 되었습니다!!");
+            function save() {
+                let form_data = new FormData($('#upload-file')[0]);
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://jacksonapp-env.eba-6btytjhi.ap-northeast-2.elasticbeanstalk.com/fileupload',
+                    data: form_data,
+                    processData: false,
+                    contentType: false,
+                    success: function (data) {
+                        alert("파일이 업로드 되었습니다!!");
+                    },
+                });
+            }
         }
     </script>
 
@@ -67,7 +79,7 @@
             <div class="form-group">
                 <form id="upload-file">
                     <label for="post-url">이미지 파일</label>
-                    <input type="file" name="file"/>
+                    <input id="post-url" type="file" name="file"/>
                 </form>
             </div>
             <button type="button" class="btn btn-primary" onclick="save()">저장</button>
