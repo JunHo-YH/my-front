@@ -49,20 +49,19 @@
     </style>
     <script>
         function save() {
-            function save() {
-                let form_data = new FormData($('#upload-file')[0]);
-                $.ajax({
-                    type: 'POST',
-                    url: 'http://jacksonapp-env.eba-6btytjhi.ap-northeast-2.elasticbeanstalk.com/fileupload',
-                    data: form_data,
-                    processData: false,
-                    contentType: false,
-                    success: function (data) {
-                        alert("파일이 업로드 되었습니다!!");
-                    },
-                });
-            }
+            let form_data = new FormData($('#upload-file')[0]);
+            $.ajax({
+                type: 'POST',
+                url: 'http://jacksonapp-env.eba-6btytjhi.ap-northeast-2.elasticbeanstalk.com/fileupload',
+                data: form_data,
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    alert("파일이 업로드 되었습니다!!");
+                },
+            });
         }
+
     </script>
 
 </head>
